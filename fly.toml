@@ -12,7 +12,7 @@ primary_region = 'lhr'
   PORT = '8080'
 
 [processes]
-  app = 'run --allow-net ./main.ts'
+  app = 'run --allow-net ./example.ts'
 
 [http_service]
   internal_port = 8080
