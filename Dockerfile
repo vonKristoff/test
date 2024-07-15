@@ -11,6 +11,7 @@ RUN apk add git
 
 RUN addgroup --gid 1000 deno \
     && adduser --uid 1000 --disabled-password deno --ingroup deno \
+    && mkdir /data/ \
     && mkdir /deno-dir/ \
     && chown deno:deno /deno-dir/
 
@@ -21,12 +22,13 @@ ARG DENO_VERSION
 ENV DENO_VERSION=${DENO_VERSION}
 COPY --from=bin /deno /bin/deno
 
-WORKDIR /data
-RUN git clone https://github.com/vonKristoff/static-docs.git
 
 WORKDIR /deno-dir
-COPY /data/static-docs/vault .
 COPY . .
+
+RUN git clone https://github.com/vonKristoff/static-docs.git
+
+
 
 
 ENTRYPOINT ["/bin/deno"]
