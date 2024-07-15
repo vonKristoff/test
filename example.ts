@@ -6,7 +6,9 @@ import {
   contentType,
 } from "https://denopkg.com/syumai/dinatra/mod.ts";
 
-const greeting = "<h1>Hello From Deno on Fly.ioooooopps!</h1>";
+const bytes = await Deno.readFile("./filepath.md");
+
+const greeting = `<h1>Hello <span>${JSON.stringify(bytes)}</span>From Deno on Fly.ioooooopps!</h1>`;
 
 app(
   get("/", () => greeting),
