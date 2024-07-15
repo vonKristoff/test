@@ -32,4 +32,4 @@ RUN git clone https://github.com/vonKristoff/static-docs.git
 
 
 ENTRYPOINT ["/bin/deno"]
-CMD ["run", "--allow-net", "https://deno.land/std/examples/echo_server.ts"]
+CMD ["run", "--allow-net", "--allow-read", "https://deno.land/std/examples/echo_server.ts"]
