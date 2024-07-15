@@ -25,7 +25,7 @@ WORKDIR /data
 RUN git clone https://github.com/vonKristoff/static-docs.git
 
 WORKDIR /deno-dir
-COPY /data/vault .
+COPY /data/static-docs/vault .
 COPY . .
 
 
