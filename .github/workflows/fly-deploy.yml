@@ -6,7 +6,8 @@ on:
     branches:
       - main
   repository_dispatch:
-    types: [my_update]
+    types:
+      - my_update
 jobs:
   deploy:
     name: Deploy app
