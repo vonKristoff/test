@@ -25,7 +25,7 @@ COPY --from=bin /deno /bin/deno
 
 WORKDIR /deno-dir
 COPY . .
-RUN git submodule update
+git clone https://github.com/vonKristoff/static-docs pages
 
 
 
