@@ -25,7 +25,7 @@ COPY --from=bin /deno /bin/deno
 
 WORKDIR /deno-dir
 COPY . .
-git clone https://github.com/vonKristoff/static-docs pages
+RUN git clone https://github.com/vonKristoff/static-docs pages
 
 
 
