@@ -24,8 +24,8 @@ COPY --from=bin /deno /bin/deno
 
 
 WORKDIR /deno-dir
-RUN git submodule update
 COPY . .
+RUN git submodule update
 
 
 
