@@ -1,5 +1,6 @@
 # Based on https://github.com/denoland/deno_docker/blob/main/alpine.dockerfile
 
+ARG REPO
 ARG DENO_VERSION=1.14.0
 ARG BIN_IMAGE=denoland/deno:bin-${DENO_VERSION}
 FROM ${BIN_IMAGE} AS bin
@@ -25,7 +26,7 @@ COPY --from=bin /deno /bin/deno
 
 WORKDIR /deno-dir
 COPY . .
-RUN git clone https://github.com/vonKristoff/${vars.TARGET_REPO} pages
+RUN git clone https://github.com/vonKristoff/${REPO} pages
 
 
 
