@@ -7,12 +7,13 @@ A simple web application using Deno and Dinatra to respond to a request. To be u
 * Run flyctl open to browse your new app
 
 # fly-deno-actions
-# fly-deno-actions
-# test
+
+# Host SSR application
 
 
 
 We want to either use `.gitsubmodules` to reference a repo (which can come from a env variable location) or just clone the following to pages directory.
+We have gone with cloning directly in the repo 👍
 ```
-git clone https://github.com/vonKristoff/static-docs pages
+git clone https://github.com/vonKristoff/workflow-static-content pages
 ```
