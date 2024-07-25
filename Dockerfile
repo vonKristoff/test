@@ -23,6 +23,7 @@ ENV DENO_VERSION=${DENO_VERSION}
 COPY --from=bin /deno /bin/deno
 
 ARG REPO
+RUN echo "The value of my_arg is: ${my_arg}"
 WORKDIR /deno-dir
 COPY . .
 RUN git clone https://github.com/vonKristoff/${REPO} pages
