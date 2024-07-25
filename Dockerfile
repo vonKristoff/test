@@ -22,10 +22,10 @@ ARG DENO_VERSION
 ENV DENO_VERSION=${DENO_VERSION}
 COPY --from=bin /deno /bin/deno
 
-
+ARG REPO
 WORKDIR /deno-dir
 COPY . .
-RUN git clone https://github.com/vonKristoff/$REPO pages
+RUN git clone https://github.com/vonKristoff/${REPO} pages
 
 
 
